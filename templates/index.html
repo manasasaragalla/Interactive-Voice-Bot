@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexVoice | Futuristic Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- History Sidebar (Left) -->
+        <div class="history-sidebar">
+            <div class="sidebar-header">
+                <span style="font-weight: 600;">Recent Chats</span>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- History items will be injected here -->
+                <div class="history-item active">
+                    <div class="item-title">Current Session</div>
+                    <div class="item-snippet">Voice & Text enabled</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualization Area (Center) -->
+        <div class="viz-container">
+            <div class="status-badge" id="status-badge">Standby</div>
+            
+            <div class="sphere-wrapper">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="sphere" id="viz-sphere"></div>
+            </div>
+
+            <button class="mic-btn-large" id="mic-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+                <span id="mic-text">Tap to Speak</span>
+            </button>
+
+            <div style="margin-top: 30px; font-size: 0.75rem; color: var(--text-dim);">
+                Developed by <span style="color: var(--primary); font-weight: 600;">Manasa Saragalla</span>
+            </div>
+        </div>
+
+        <!-- Chat Sidebar (Right) -->
+        <div class="chat-sidebar">
+            <div class="chat-header">
+                <span style="font-weight: 600;">Active Chat</span>
+                <span style="font-size: 0.75rem; color: var(--text-dim);">HI / TE Mix</span>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="msg msg-bot">
+                    Namaste! Nenu meku ela help cheyagalanu?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="live-transcript" id="live-transcript">Waiting for input...</div>
+                <div class="text-input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+                    <button id="send-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">Developed by Manasa Saragalla</footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
