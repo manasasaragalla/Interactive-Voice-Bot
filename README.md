@@ -42,17 +42,18 @@ GEMINI_API_KEY=your_api_key_here
 ```
 
 ### 4. Running the Project
-Start the Flask server:
+Start the Flask server using the virtual environment:
 ```bash
-python app.py
+.\venv\Scripts\python.exe app.py
 ```
 The app will be available at `http://127.0.0.1:5000`.
 
 ### 5. Hosting with ngrok
 To expose the project for evaluation:
 ```bash
-ngrok http 5000
+.\ngrok.exe http 5000
 ```
+*(If ngrok is not in your path, ensure you have the ngrok.exe in the project folder)*
 Share the generated `https://...ngrok-free.app` URL.
 
 ---
